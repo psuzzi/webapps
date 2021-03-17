@@ -1,0 +1,27 @@
+= Simple Angular Frontend
+
+Simple Angular web application, like hello world.
+
+=== Prerequisites
+
+Node and angular cli should be installed
+
+[code, bash]
+----
+brew update && brew install node
+npm install -g @angular/cli
+----
+
+Build the project from scratch and then serve it locally
+
+[code, bash]
+----
+ng new angular-simple-fe
+cd new angular-simple-fe
+ng serve
+----
+
+Then, the application is accessible at http://localhost:4200
+
+Ref
+- https://tecadmin.net/install-angular-on-macos/
