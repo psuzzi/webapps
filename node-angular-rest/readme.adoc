@@ -1,0 +1,63 @@
+= Node REST backend + Angular Frontend
+
+Simple Angular web application, like hello world.
+
+=== Prerequisites
+
+Node and angular cli should be installed
+
+[code, bash]
+----
+brew update && brew install node
+npm install -g @angular/cli
+----
+
+== Init Frontend
+
+Build the project from scratch and then serve it locally
+
+[code, bash]
+----
+ng new angular-fe
+cd angular-fe
+ng serve
+----
+
+Then, the application is accessible at http://localhost:4200
+
+== Init Node backend
+
+Build the project, initialize the package, and install express
+
+[code, bash]
+----
+mkdir node-api
+npm init
+npm install express --save
+----
+
+Create `app.js` with the following content
+
+[code, javascript]
+----
+const express = require ('express');
+
+const app = express();
+
+app.get('/getData', (req, res) => {
+    res.json({
+        "statusCode":200,
+        "statusMessage": "SUCCESS"
+    })
+})
+
+app.listen(3000, (req, res) => {
+    console.log('Express API is running at port 3000');
+})
+----
+
+Then, launch the server with the command `node ./app.js`, visit with the browser the URL http://localhost:3000/getData, and verify you can GET the json output: `{"statusCode":200,"statusMessage":"SUCCESS"}`
+
+
+Ref
+- https://www.youtube.com/watch?v=RSJxWJ6dCL4
